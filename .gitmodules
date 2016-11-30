@@ -1,0 +1,6 @@
+[submodule "saltstack/formulas/dnsmasq-formula"]
+	path = saltstack/formulas/dnsmasq-formula
+	url = git@github.com:saltstack-formulas/dnsmasq-formula.git
+[submodule "saltstack/formulas/sysctl-formula"]
+	path = saltstack/formulas/sysctl-formula
+	url = git@github.com:saltstack-formulas/sysctl-formula
