@@ -28,7 +28,7 @@ dnsmasq:
   dnsmasq_conf_dir: salt://dnsmasq/files/dnsmasq.d
 
   settings:
-    port: 0 
+    port: 53
     domain: 'rawr.us.local'
     interface:
       - eth1
