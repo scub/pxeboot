@@ -9,3 +9,4 @@ base:
     - firewall
     - dnsmasq
     - sysctl
+    - nginx.ng
