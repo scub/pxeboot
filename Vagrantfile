@@ -24,6 +24,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder   'saltstack/pillar', '/srv/pillar'
   config.vm.synced_folder   'saltstack/formulas', '/srv/formulas'
   config.vm.synced_folder   'assets/tftpboot', '/srv/tftpboot'
+  config.vm.synced_folder   'assets/www-root', '/srv/www/'
 
   # How many minions? (1)
   (1..1).each do |i|

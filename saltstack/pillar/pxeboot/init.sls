@@ -52,3 +52,44 @@ dnsmasq:
 
     # Boot PXELINUX Image
     dhcp-boot:  'net:pxe,pxelinux.0' 
+
+
+# saltstack-formulas/nginx-formula
+#
+#  Configure and enable nginx to serve our preseed
+# files.
+#
+nginx:
+  ng:
+    service:
+      enable: True
+
+    server:
+      config:
+        worker_processes: 4
+        pid: /run/nginx.pid
+        events:
+          worker_connections: 768
+        http:
+          sendfile: 'on'
+          include:
+            - /etc/nginx/mime.types
+            - /etc/nginx/conf.d/*.conf
+            - /etc/nginx/sites-enabled/*
+
+    servers:
+      managed:
+        pxeboot:
+          enabled: True
+          overwrite: True # overwrite an existing server file or not
+          config:
+            - server:
+              - server_name: 10.11.0.1
+              - listen:
+                - 10.11.0.1:80
+              - index:
+                - index.html
+                - index.htm
+              - location /:
+                - root:
+                  - '/srv/www'
