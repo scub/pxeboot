@@ -39,19 +39,19 @@ dnsmasq:
     log-dhcp:         True
     tftp-root:        '/srv/tftpboot/netboot'
 
-    # DHCP Host Filter (PXE Whitelist) 
+    # DHCP Host Filter (PXE Whitelist)
     dhcp-host: "08:00:27:*:*:*,net:pxe"
 
-    # DHCP Configuration 
+    # DHCP Configuration
     dhcp-lease-max:   254
     # Provide us as the Gateway
-    dhcp-option: '3,192.168.101.1'
+    dhcp-option: '3,10.11.0.1'
 
     # DHCP Ranges
-    dhcp-range: 'net:pxe,192.168.101.2,192.168.101.254,255.255.0.0,192.168.255.255,2d'
+    dhcp-range: 'net:pxe,10.11.0.2,10.11.0.254,255.255.0.0,10.11.255.255,2d'
 
     # Boot PXELINUX Image
-    dhcp-boot:  'net:pxe,pxelinux.0' 
+    dhcp-boot:  'net:pxe,pxelinux.0'
 
 
 # saltstack-formulas/nginx-formula
