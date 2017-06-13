@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
 
       pxeboot.vm.provider :virtualbox do |provider,override|
         provider.memory = 2048
-        override.vm.box = 'bento/debian-8.4'
+        override.vm.box = 'bento/debian-8.7'
       end
     end
 
