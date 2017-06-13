@@ -4,3 +4,6 @@
 [submodule "saltstack/formulas/sysctl-formula"]
 	path = saltstack/formulas/sysctl-formula
 	url = git@github.com:saltstack-formulas/sysctl-formula
+[submodule "saltstack/formulas/nginx-formula"]
+	path = saltstack/formulas/nginx-formula
+	url = git@github.com:saltstack-formulas/nginx-formula.git
