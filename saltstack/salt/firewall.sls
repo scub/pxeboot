@@ -5,13 +5,13 @@
 #
 # ft=yaml
 
-# Masquerade traffic not bound to 192.168.0.0/16
-# iptables -t nat -A POSTROUTING -d ! 192.168.0.0/16 -j MASQUERADE
+# Masquerade traffic not bound to 10.11.0.0/16
+# iptables -t nat -A POSTROUTING -d ! 10.11.0.0/16 -j MASQUERADE
 firewall_add_masquerade_forward:
   iptables.append:
     - table: nat
     - chain: POSTROUTING
-    - destination: '! 192.168.0.0/16'
+    - destination: '! 10.11.0.0/16'
     - jump: 'MASQUERADE'
 
 # Add global forwards to 192.168.0.0/16 
@@ -20,7 +20,7 @@ firewall_add_global_dest_forward:
   iptables.append:
     - table: filter
     - chain: FORWARD
-    - destination: '192.168.0.0/16'
+    - destination: '10.11.0.0/16'
     - jump: 'ACCEPT'
 
 # Add global forwards from 192.168.0.0/16
@@ -29,7 +29,7 @@ firewall_add_global_source_forward:
   iptables.append:
     - table: filter
     - chain: FORWARD
-    - source: '192.168.0.0/16'
+    - source: '10.11.0.0/16'
     - jump: 'ACCEPT'
 
 # Add global rejects for other forwards

@@ -30,7 +30,7 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "pxeboot" do |pxeboot|
       # Internal Network (VirtualBox)
-      pxeboot.vm.network "private_network", ip: "192.168.101.#{i}",
+      pxeboot.vm.network "private_network", ip: "10.11.0.#{i}",
         virtualbox__intnet: true
 
       pxeboot.vm.host_name = "pxeboot#{i}-vagrant"
