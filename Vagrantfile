@@ -22,13 +22,13 @@ Vagrant.configure(2) do |config|
   end
 
   # Synced folders
-  config.vm.synced_folder   VAGRANT_ROOT + 'saltstack/.', '/vagrant', disabled: true
-  config.vm.synced_folder   VAGRANT_ROOT + 'saltstack/etc/minion.d/', '/etc/salt/minion.d'
-  config.vm.synced_folder   VAGRANT_ROOT + 'saltstack/salt', '/srv/salt'
-  config.vm.synced_folder   VAGRANT_ROOT + 'saltstack/pillar', '/srv/pillar'
-  config.vm.synced_folder   VAGRANT_ROOT + 'saltstack/formulas', '/srv/formulas'
-  config.vm.synced_folder   VAGRANT_ROOT + 'assets/tftpboot', '/srv/tftpboot'
-  config.vm.synced_folder   VAGRANT_ROOT + 'assets/www-root', '/srv/www/'
+  config.vm.synced_folder   VAGRANT_ROOT + '/saltstack/.', '/vagrant', disabled: true
+  config.vm.synced_folder   VAGRANT_ROOT + '/saltstack/etc/minion.d/', '/etc/salt/minion.d'
+  config.vm.synced_folder   VAGRANT_ROOT + '/saltstack/salt', '/srv/salt'
+  config.vm.synced_folder   VAGRANT_ROOT + '/saltstack/pillar', '/srv/pillar'
+  config.vm.synced_folder   VAGRANT_ROOT + '/saltstack/formulas', '/srv/formulas'
+  config.vm.synced_folder   VAGRANT_ROOT + '/assets/tftpboot', '/srv/tftpboot'
+  config.vm.synced_folder   VAGRANT_ROOT + '/assets/www-root', '/srv/www/'
 
   # How many minions? (1)
   (1..1).each do |i|
